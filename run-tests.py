@@ -25,7 +25,7 @@ class EnvironmentResource(TypedDict):
     target: str
 
 
-github_workspace_directory = Path("/github/workspace")
+github_workspace_directory = Path(os.environ['GITHUB_WORKSPACE'])
 test_script_directory = None
 test_script_directory_input = os.environ.get("INPUT_TEST_SCRIPT_DIRECTORY", None)
 if test_script_directory_input is not None:
